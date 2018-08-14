@@ -6,7 +6,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-data class Customer (
+data class Customer(
         var firstName: String = "",
         var lastName: String = "",
 

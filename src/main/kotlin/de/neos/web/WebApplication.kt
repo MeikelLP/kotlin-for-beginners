@@ -8,7 +8,7 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
-class WebApplication{
+class WebApplication {
     @Bean
     fun init(repository: CustomerRepository) = CommandLineRunner {
         repository.save(Customer("Jack", "Bauer"))
