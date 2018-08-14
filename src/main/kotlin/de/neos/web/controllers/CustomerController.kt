@@ -7,10 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class CustomerController(val repository: CustomerRepository) {
-
-    @GetMapping("/")
-    fun findAll() = repository.findAll()
-
-    @GetMapping("/{name}")
+    @GetMapping("/customer/{name}")
     fun findByLastName(@PathVariable name: String) = repository.findByLastName(name)
 }
