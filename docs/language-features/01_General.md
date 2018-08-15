@@ -6,3 +6,4 @@
 * The default Kotlin libraries are always imported.
 * Types are by default null-safe.
 * The `new` keyword does not exist.
+* No checked expections.

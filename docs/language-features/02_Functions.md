@@ -42,3 +42,13 @@ public getDisplayName () {
 
 fun getDisplayName() = firstName + LastName
 ```
+
+## Names
+
+It's not recommended but you can also use special names for your functions like `get name of x`.
+
+```kotlin
+fun `get name of x`() = x.name
+```
+
+This may be useful for easier to read test names.

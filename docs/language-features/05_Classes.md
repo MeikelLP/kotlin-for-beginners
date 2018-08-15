@@ -60,7 +60,7 @@ class User(
 
 > But in Kotlin aren't strings not-null anyway? Why do I have to set a string to its default value altought it already is this value?
 
-That's correct. Kotlin does not allow null values for `String` (unlike `String?`). Kotlin needs these default values to determine whether the properties shall be an optional parameter or not (see [Optional Parameter](03_Optional_Parameter.md)).
+That's correct. Kotlin does not allow null values for `String` (unlike `String?`). Kotlin needs these default values to determine whether the properties shall be an optional parameter or not (see [Optional Parameters](03_Parameters.md#optional-parameters)).
 
 ## Data Classes
 
