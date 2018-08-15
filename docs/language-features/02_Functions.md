@@ -20,7 +20,7 @@ public int sum(int a, int b) {
 
 > But isn't Java shorter and more readable?
 
-In this example in fact Java is shorter. When you have longer methods with more complex method headers this can fastly shift to Kotlins extendablity (see [Expression Bodies](#epxression-bodies), [Optional Parameters](03_Optional_Parameters.md) and [Named Parameters](04_Named_Parameters.md)).
+In this example in fact Java is shorter. When you have longer methods with more complex method headers this can fastly shift to Kotlins extendablity (see [Expression Bodies](#expression-bodies), [Optional Parameters](03_Optional_Parameters.md) and [Named Parameters](04_Named_Parameters.md)).
 
 ## Expression Bodies
 
