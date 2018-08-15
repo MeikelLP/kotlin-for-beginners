@@ -7,10 +7,10 @@ import javax.persistence.Id
 
 @Entity
 data class Customer(
-        var firstName: String = "",
-        var lastName: String = "",
+        override var firstName: String = "",
+        override var lastName: String = "",
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         var id: Long = 0
-)
+) : de.neos.web.entities.Entity
