@@ -104,6 +104,43 @@ when {
 }
 ```
 
+## Loops
+
+### `for` loops
+
+Like in C# you can use a simple human readable for-each loop.
+
+```kotlin
+for(item in collection) {
+    print(item)
+}
+```
+
+Note that the `{}` are not required here like in simple `if` statements. You can even use more complex expressions for the `for` loop.
+
+```kotlin
+for(i in 1..10)
+for(i in 10 downTo 0 step 2)
+```
+
+> Ranges are compiled to index based loops.
+
+Furthermore you can iterate over index and value at the same time (`for` + `foreach` combinded).
+
+```kotlin
+for ((index, value) in array.withIndex()) {
+    println("the element at $index is $value")
+}
+```
+
+### `while` loops
+
+While loops work as usual.
+
+### `continue` and `break` in loops
+
+see [official docs](https://kotlinlang.org/docs/reference/returns.html#break-and-continue-labels)
+
 ## See more
 
 * [Official Control Flow Guide](https://kotlinlang.org/docs/reference/control-flow.html)
