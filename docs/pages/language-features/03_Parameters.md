@@ -1,3 +1,6 @@
+---
+layout: post
+---
 # Parameters
 
 ## Optional Parameters

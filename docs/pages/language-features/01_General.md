@@ -1,3 +1,6 @@
+---
+layout: post
+---
 # General
 
 * Semicolons `;` are optional

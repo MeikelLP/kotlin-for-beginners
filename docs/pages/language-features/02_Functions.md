@@ -1,3 +1,6 @@
+---
+layout: post
+---
 # Functions
 
 The following functions are equal in both languages.

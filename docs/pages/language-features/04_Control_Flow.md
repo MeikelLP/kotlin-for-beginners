@@ -1,3 +1,6 @@
+---
+layout: post
+---
 # Control Flow
 
 ## If Expressions

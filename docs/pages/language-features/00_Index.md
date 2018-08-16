@@ -1,3 +1,6 @@
+---
+layout: post
+---
 # Language Features
 
 1. [General](01_General.md)

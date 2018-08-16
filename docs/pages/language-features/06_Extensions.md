@@ -1,8 +1,11 @@
+---
+layout: post
+---
 # Extensions
 
 Like in C# Kotlin brings extensions to the JVM. For anyone wondering what extension methods are: _Extension methods are static methods having access to private properties of a class_ (basically). Extension methods shall not be contained in the class itself. More likely they are stored in "extension" classes. The following example shows a simple use case of extensions using the Kotlin I/O API.
 
-```Java
+```java
 // Java
 
 File file = new File("test.txt");
