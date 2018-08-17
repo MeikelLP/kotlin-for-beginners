@@ -3,8 +3,8 @@ layout: default
 is_fluid: true
 ---
 <div class="columns">
-    <div class="column is-2">
-        <aside class="menu">
+    <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-mobile">
+        <aside class="menu fixed">
             {% for category in site.category-list %}
                 <p class="menu-label">
                     {{category}}
@@ -27,11 +27,11 @@ is_fluid: true
             {% endfor %}
         </aside>
     </div>
-    <div class="column is-8 content">
+    <div class="column content">
         {{ content }}
     </div>
-    <div class="column is-2">
-        <aside class="menu">
+    <div class="column is-2 is-hidden-touch is-hidden-desktop-only">
+        <aside class="menu fixed">
             <p class="menu-label">
                 {{page.title}}
             </p>
