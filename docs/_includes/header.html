@@ -1,0 +1,32 @@
+<nav class="navbar is-dark is-fixed-top" role="navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{site.baseurl}}/">
+            Kotlin for Beginners
+        </a>
+        <div class="navbar-burger burger" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+            {%-for cat in site.category-list do-%}
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="#">
+                    {{cat}}
+                </a>
+                <div class="navbar-dropdown is-boxed">
+                    {% for page in site.pages %}
+                        {% for pc in page.categories %}
+                            {% if pc == cat %}
+                                <a class="navbar-item" href="{{site.baseurl}}/{{page.url}}">{{page.title}}</a>
+                            {% endif %} 
+                        {% endfor %}
+                    {% endfor %} 
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</nav>

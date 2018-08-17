@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: doc
+categories: ["Language Features"]
 ---
 # General
 

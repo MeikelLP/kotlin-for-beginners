@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 ---
 
 # What is Kotlin

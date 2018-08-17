@@ -8,6 +8,21 @@ github_username:  meikellp
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-relative-links
+
+category-list: ["Language Features"]
+
+sass:
+  sass_dir: assets
+
+include:
+- assets/main.sass
+
+exclude:
+- "Gemfile"
+- "Gemfile.lock"
+- ".gitignore"
+- "package-lock.json"
+- "package.json"
+- "node_modules/"
