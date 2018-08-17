@@ -11,7 +11,7 @@ markdown: kramdown
 plugins:
   - jekyll-relative-links
 
-category-list: ["Language Features"]
+category-list: ["Language Features", "Java & Kotlin"]
 
 sass:
   sass_dir: assets

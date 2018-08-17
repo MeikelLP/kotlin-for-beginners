@@ -5,29 +5,39 @@ is_fluid: true
 <div class="columns">
     <div class="column is-2">
         <aside class="menu">
-            <p class="menu-label">
-                {{page.categories[0]}}
-            </p>
-            <ul class="menu-list">
-                {% for p in site.pages %}
-                    {% for pc in p.categories %}
-                        {% if pc == page.categories[0] %}
-                            <li>
-                                {% if page.url == p.url %}
-                                    <a class="is-active" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
-                                {% else %}
-                                    <a href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
-                                {% endif %}
-                            </li>
-                        {% endif %} 
+            {% for category in site.category-list %}
+                <p class="menu-label">
+                    {{category}}
+                </p>
+                <ul class="menu-list">
+                    {% for p in site.pages %}
+                        {% for pc in p.categories %}
+                            {% if pc == category %}
+                                <li>
+                                    {% if page.url == p.url %}
+                                        <a class="is-active" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
+                                    {% else %}
+                                        <a href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
+                                    {% endif %}
+                                </li>
+                            {% endif %} 
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
-            </ul>
+                </ul>
+            {% endfor %}
         </aside>
     </div>
     <div class="column is-8 content">
         {{ content }}
     </div>
-    <div class="column"></div>
+    <div class="column is-2">
+        <aside class="menu">
+            <p class="menu-label">
+                {{page.title}}
+            </p>
+            <ul class="menu-list" id="content-menu">
+            </ul>
+        </aside>
+    </div>
 </div>
         
