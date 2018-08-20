@@ -1,5 +1,4 @@
 ---
-layout: doc
 categories: ["Language Features"]
 ---
 # Classes

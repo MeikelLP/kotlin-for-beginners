@@ -1,43 +1,35 @@
+--- 
+layout: base 
+has_sidebar: true 
 ---
-layout: default
-is_fluid: true
----
-<div class="columns">
-    <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-mobile">
-        <aside class="menu fixed">
-            {% for category in site.category-list %}
-                <p class="menu-label">
-                    {{category}}
-                </p>
-                <ul class="menu-list">
-                    {% for p in site.pages %}
-                        {% for pc in p.categories %}
-                            {% if pc == category %}
-                                <li>
-                                    {% if page.url == p.url %}
-                                        <a class="is-active" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
-                                    {% else %}
-                                        <a href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
-                                    {% endif %}
-                                </li>
-                            {% endif %} 
-                        {% endfor %}
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </aside>
-    </div>
-    <div class="column content">
+
+<aside id="sidebar-left" class="menu sidebar is-left is-hidden-touch">
+    {% for category in site.category-list %}
+    <p class="menu-label">
+        {{category}}
+    </p>
+    <ul class="menu-list">
+        {% for p in site.pages %} {% for pc in p.categories %} {% if pc == category %}
+        <li>
+            {% if page.url == p.url %}
+            <a class="is-active" href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
+            {% else %}
+            <a href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
+            {% endif %}
+        </li>
+        {% endif %} {% endfor %} {% endfor %}
+    </ul>
+    {% endfor %}
+</aside>
+<section id="main" class="section has-sidebar is-left is-right">
+    <div class="content">
         {{ content }}
     </div>
-    <div class="column is-2 is-hidden-touch is-hidden-desktop-only">
-        <aside class="menu fixed">
-            <p class="menu-label">
-                {{page.title}}
-            </p>
-            <ul class="menu-list" id="content-menu">
-            </ul>
-        </aside>
-    </div>
-</div>
-        
+</section>
+<aside class="menu sidebar is-right is-hidden-touch">
+    <p class="menu-label">
+        {{page.title}}
+    </p>
+    <ul class="menu-list" id="content-menu">
+    </ul>
+</aside>

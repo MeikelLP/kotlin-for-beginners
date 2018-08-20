@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+--- 
+layout: base 
+---
 
-{%- include head.html -%}
-
-<body>
-    <div id="app">
-        {%- include header.html -%} 
-            {% if layout.is_fluid%}
-            <main class="container is-fluid">
-                <div class="section">
-                    {{ content }}
-                </div>
-            </main>
-            {% else %}
-            <main class="container">
-                <div class="section content" aria-label="Content">
-                    {{ content }}
-                </div>
-            </main>
-            {% endif %}
-        </main>
-
-        {%- include footer.html -%} {%- include scripts.html -%}
-    </div>
-</body>
-
-</html>
+<section id="main" class="section container is-fluid content">
+    {{ content }}
+</section>

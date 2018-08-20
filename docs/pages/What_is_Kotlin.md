@@ -1,5 +1,6 @@
 ---
 layout: default
+test: true
 ---
 
 # What is Kotlin

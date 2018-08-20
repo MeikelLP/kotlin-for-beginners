@@ -3,16 +3,49 @@
 
 @import "_syntax-highlight.scss"
 
-#app
+$sidebar-width: 280px
+$navbar-height: 3.25rem
+
+html
+    height: 100%
+    
+body
+    min-height: 100%
     display: flex
     min-height: 100vh
     flex-direction: column
 
-
-main
+#main
     flex: 1
 
-.fixed 
+
+body.has-navbar-fixed-top
+    .sidebar
+        top: $navbar-height
+
+.sidebar
     position: fixed
-    overflow-y: auto
-    max-height: 100vh
+    width: $sidebar-width
+    padding: 1rem
+    background-color: white
+    bottom: 0
+    
+    &.is-left
+        left: 0
+
+    &.is-right
+        right: 0
+
+
+@media screen and (min-width: 960px + 128px) // bulma desktop
+    .has-sidebar
+        &.is-left
+            margin-left: $sidebar-width
+        &.is-right
+            margin-left: $sidebar-width
+
+#main
+    h1, h2, h3
+        margin-top: -$navbar-height
+        padding-top: $navbar-height
+    

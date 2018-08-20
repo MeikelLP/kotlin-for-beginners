@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en " }}">
+
+{%- include head.html -%}
+
+<body class="has-navbar-fixed-top is-flex-touch">
+    <section id="header">
+        {%- include header.html -%} 
+    </section>
+    {{ content }}
+    {%- include footer.html -%}
+    {%- include scripts.html -%}
+</body>
+
+</html>
