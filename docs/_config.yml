@@ -16,9 +16,6 @@ category-list: ["Language Features", "Java & Kotlin"]
 sass:
   sass_dir: assets
 
-include:
-- assets/main.sass
-
 exclude:
 - "Gemfile"
 - "Gemfile.lock"

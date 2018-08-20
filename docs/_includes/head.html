@@ -1,2 +1,14 @@
 <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
-<link rel="stylesheet" href="{{ '/assets/bulma.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/bulma-switch.min.css' | relative_url }}" />
+
+<script type="text/javascript">
+    const theme = localStorage.getItem('theme') || 'light'
+    
+    if (theme === 'dark') {
+        document.write('<link rel="stylesheet" id="theme" href="https://cdnjs.cloudflare.com/ajax/libs/bulmaswatch/0.7.1+1/solar/bulmaswatch.min.css" />');
+        document.write('<link rel="stylesheet" id="theme-highlight" href="{{ '/assets/highlight-dark.css' | relative_url }}" />');
+    } else {
+        document.write('<link rel="stylesheet" id="theme" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />');
+        document.write('<link rel="stylesheet" id="theme-highlight" href="{{ '/assets/highlight-light.css' | relative_url }}" />');
+    }
+</script>
