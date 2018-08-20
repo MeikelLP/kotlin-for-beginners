@@ -5,6 +5,7 @@
 
 $sidebar-width: 280px
 $navbar-height: 3.25rem
+$footer-height: calc(9rem + 2rem + 2px) // footer padding + wrapper padding + p padding
 
 html
     height: 100%
@@ -27,8 +28,7 @@ body.has-navbar-fixed-top
     position: fixed
     width: $sidebar-width
     padding: 1rem
-    background-color: white
-    bottom: 0
+    bottom: $footer-height
     
     &.is-left
         left: 0
@@ -42,10 +42,15 @@ body.has-navbar-fixed-top
         &.is-left
             margin-left: $sidebar-width
         &.is-right
-            margin-left: $sidebar-width
+            margin-right: $sidebar-width
 
 #main
     h1, h2, h3
+        // fix for anchor navigation
         margin-top: -$navbar-height
         padding-top: $navbar-height
+
+#hero-header
+    img
+        height: 3rem
     
