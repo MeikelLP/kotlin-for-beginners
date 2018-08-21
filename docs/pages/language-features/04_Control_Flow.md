@@ -114,7 +114,7 @@ when {
 Like in C# you can use a simple human readable for-each loop.
 
 ```kotlin
-for(item in collection) {
+for(item in collection) { // note that you don't need val or var
     print(item)
 }
 ```
@@ -136,6 +136,30 @@ for ((index, value) in array.withIndex()) {
 }
 ```
 
+There are also some tricks for even easier loops.
+
+* Deconstructing Declartions
+    ```kotlin
+    // Kotlin
+
+    for((key, value) in map) {
+        print("Key: $key & Value: $value")
+    }
+    ```
+
+    which is equal to:
+
+    ```java
+    // Java
+
+    for (Map.Entry<Integer, String> entry : map.entrySet()) {
+        Integer key = entry.getKey();
+        String value = entry.getValue();
+        String message = String.format("Key: %s & Value: %s", key, value);
+        System.out.print(message);
+    }
+    ```
+
 ### `while` loops
 
 While loops work as usual.
@@ -143,6 +167,18 @@ While loops work as usual.
 ### `continue` and `break` in loops
 
 see [official docs](https://kotlinlang.org/docs/reference/returns.html#break-and-continue-labels)
+
+## Smart Cast
+
+Using the `is` in an condition like `if` or `when` the variable is casted to the value in the next context:
+
+```kotlin
+// Kotlin
+
+var s : Any = "abc"
+if (s is String)
+    println(s.length)
+```
 
 ## See more
 

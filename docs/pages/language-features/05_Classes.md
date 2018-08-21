@@ -27,7 +27,7 @@ public class User{
 class User(var firstName: String, var lastName: String)
 ```
 
-This is especially useful when creating [data classes](#data-classes). As you can see you don't need curly brackets `{}` for the body if you only define class properties.
+This is especially useful when creating [data classes](#data-classes). As you can see you don't need curly brackets `{}` for the body if you only define class properties. If you still want some code in your primary
 
 ### Secondary Constructor
 
@@ -63,7 +63,7 @@ class User(
 
 > But in Kotlin aren't strings not-null anyway? Why do I have to set a string to its default value altought it already is this value?
 
-That's correct. Kotlin does not allow null values for `String` (unlike `String?`). Kotlin needs these default values to determine whether the properties shall be an optional parameter or not (see [Optional Parameters](03_Parameters.md#optional-parameters)).
+That's correct. Kotlin does not allow null values for `String` (unlike `String?`). Kotlin needs these default values to determine whether the properties shall be an optional parameter or not (see [Optional Parameters](02_Functions.md#optional-parameters)).
 
 ## Data Classes
 
@@ -183,3 +183,33 @@ fun getDisplayName(user: User) = firstName + lastName
 ```
 
 As you can see static methods get declared outside of the class body to visually divide instance and static methods.
+
+## Sealed Classes
+
+In Kotlin there are so called `sealed` classes which are useful when using `when` expressions to check if an object is of a given type.
+At compile time the compiler knows what types are inheriting the sealed class and know what you can check in an `when` expression. For example:
+
+```kotlin
+// Kotlin
+sealed class Expr
+data class Const(val number: Double) : Expr()
+data class Sum(val e1: Expr, val e2: Expr) : Expr()
+object NotANumber : Expr()
+```
+
+```kotlin
+// Kotlin
+fun eval(expr: Expr): Double = when(expr) {
+    is Const -> expr.number
+    is Sum -> eval(expr.e1) + eval(expr.e2)
+    NotANumber -> Double.NaN
+    // the `else` clause is not required because we've covered all the cases
+}
+```
+
+Sealed classes are  similar to enum values except that enum values are unique and cannot be instantiated whereas (subclasses of) sealed classes
+can be insantiated. Sealed classes itself are abstract.
+
+Also the Reddit user sebaslogen [explained it pretty well](https://www.reddit.com/r/androiddev/comments/8ktp6d/whats_your_favorite_feature_of_kotlin/dzbms10).
+
+_Not to be confused with C#s `sealed` keyword, which is equal to non-`open` classes or `final` classes in java._
