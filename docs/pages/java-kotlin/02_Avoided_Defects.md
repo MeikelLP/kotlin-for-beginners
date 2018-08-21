@@ -32,3 +32,21 @@ val employeeAge : Int? = employee.age
 val supervisorAge : Int? = supervisor.age
 if (employeeAge == supervisorAge) // still works
 ```
+
+## Nullability
+
+By default Kotlin disallows nullable types / values. This causes the developer to be more consious with there types and avoids most null pointers at compile time.
+
+```kotlin
+// Kotlin
+
+var name : String = "Testificate"
+name = null // compiliation error
+
+var name2 : String? = "Testificate"
+name2 = null // all good
+
+// you can also use the elvis operator for fallbacks
+
+name = getNullableName() ?: "No Name"
+```
