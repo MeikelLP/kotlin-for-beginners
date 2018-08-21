@@ -43,7 +43,6 @@ themeSwticher.addEventListener('change', _ => {
   refreshTheme(themeSwticher.checked)
   const theme = getThemeKey(themeSwticher.checked)
   localStorage.setItem('theme', theme)
-  console.log(themeSwticher.checked)
 })
 
 function refreshTheme(toggle) {

@@ -25,6 +25,8 @@ public int sum(int a, int b) {
 
 In this example in fact Java is shorter. When you have longer methods with more complex method headers this can fastly shift to Kotlins extendablity (see [Expression Bodies](#expression-bodies), [Optional Parameters](03_Optional_Parameters.md) and [Named Parameters](04_Named_Parameters.md)).
 
+Kotlin uses **aggresive type inference**. This means that Kotlin knows what your function is returning without needing to declare it explicitly (in most cases).
+
 ## Expression Bodies
 
 _Reusing the example from [Functions](#functions)_

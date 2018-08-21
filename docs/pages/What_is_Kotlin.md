@@ -17,6 +17,7 @@
 
 ## Compatibility Features
 
+* Can be compiled to Java bytecode, Native, Javascript or WebAssembly.
 * [Supports Java 6, 7 and 8 compatible bytecode](https://kotlinlang.org/docs/reference/faq.html).
 * Supports Android, server-side, web (JavaScript), desktop and native development use cases.
 * You can mix Kotlin and Java in on project and use them seemlessly together.
@@ -33,12 +34,16 @@
   * [Kobalt](http://beust.com/kobalt/home/index.html)
 * Problemloses konvertieren von **Java -> Kotlin** oder **Kotlin -> Java**
 
-## Libraries (re-)written in Kotlin
+## Libraries / Tools (re-)written / supporting in Kotlin
 
 * [RxKotlin](https://github.com/ReactiveX/RxKotlin) Kotlin Adaptor for RxJava
 * [Anko](https://github.com/Kotlin/anko) Anko is a library which makes Android application development faster and easier.
 * [okio](https://github.com/square/okio) A modern I/O API for Java
 * [Kobalt](https://github.com/cbeust/kobalt) Kobalt is a modern and versatile build system.
+* [Spring](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#kotlin)
+* [Gradle](https://github.com/gradle/kotlin-dsl)
+* [Vert.x](https://vertx.io/)
+* [Javalin](https://javalin.io/)
 * [and many more](https://github.com/mcxiaoke/awesome-kotlin)
 
 ## Misc
@@ -48,3 +53,14 @@
 * Completly open source at Github.
 * Kotlin is the [second most loved language](https://insights.stackoverflow.com/survey/2018/#most-loved-dreaded-and-wanted) and fourth most wanted (at the beginning of 2018).
 * As of May 2017 Kotlin is an [offical Android language supported by Google](https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/)
+* Kotlin is the [second least disliked language of 2017](https://stackoverflow.blog/2017/10/31/disliked-programming-languages/)
+* Try Kotlin [online](http://try.kotlinlang.org/)
+
+## Articles
+
+* [Kotlin a massive leap forward](https://proandroiddev.com/kotlin-a-massive-leap-forward-78251531f616)
+
+## See more
+
+* [Talks Map](http://kotlinlang.org/community/talks.html)
+* Offical (from the Developer hosted) [Subreddit](https://www.reddit.com/r/Kotlin/)
