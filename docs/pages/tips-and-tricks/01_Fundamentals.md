@@ -48,3 +48,53 @@ fun nbYear(pp0:Int, percent:Double, aug:Int, p:Int):Int {
 As usual you don't need a `return` keyword because the last line in a lambda is automatically returned.
 `generateSequence` builds new values as long as the value is not `null`. Here comes `takeIf{ it }` in handy because it only returns the value
 if the condition matches else `null` is returned. Finally we call `.count()` to get the amount of years.
+
+## `repeat`
+
+_based on [Mumbling](https://www.codewars.com/kata/mumbling/kotlin)_
+
+The method `accum` shall return the following results:
+
+```kotlin
+accum("abcd") // -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") // -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") // -> "C-Ww-Aaa-Tttt"
+```
+
+Using the `repeat` function on a string makes it easy to do this whithout any bloated while- / for-loops:
+
+```kotlin
+fun accum(s:String):String{
+    return s.mapIndexed { index, char ->
+        char.toUpperCase() + char.toString().toLowerCase().repeat(index)
+    }.joinToString("-")
+}
+```
+
+## Invoke Strings
+
+You can invoke strings in Kotlin with simple extensions:
+
+```kotlin
+print("Test"("Testificate")) // prints: Testificate
+
+operator fun<T> String.invoke(s: T) = s
+```
+
+## Evading Javas Type Erasure
+
+Due Javas type erasure we have problems when it comes to type comparision. In Kotlin you can evade this problem with the `reified` keyword won't lose
+the type. But `reified` can only be used in inline functions not on classes so we have to create an extension method:
+
+```kotlin
+class TrickyKotlin6<T>
+
+inline fun <reified T>TrickyKotlin6<T>.classOrSuperClassOf(anyGetter : () -> Any) : Boolean{
+    return anyGetter() is T
+}
+
+// we can now call
+TrickyKotlin6<String>().classOrSuperClassOf { "" } // true
+TrickyKotlin6<CharSequence>().classOrSuperClassOf { "" } // true
+TrickyKotlin6<Comparable<String>>().classOrSuperClassOf { "" } // true
+```
