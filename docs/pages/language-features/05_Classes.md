@@ -213,3 +213,7 @@ can be insantiated. Sealed classes itself are abstract.
 Also the Reddit user sebaslogen [explained it pretty well](https://www.reddit.com/r/androiddev/comments/8ktp6d/whats_your_favorite_feature_of_kotlin/dzbms10).
 
 _Not to be confused with C#s `sealed` keyword, which is equal to non-`open` classes or `final` classes in java._
+
+## Inline Classes
+
+_best explaination can be found [here](https://typealias.com/guides/introduction-to-inline-classes/)_
